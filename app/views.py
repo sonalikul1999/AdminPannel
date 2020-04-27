@@ -40,3 +40,9 @@ def adminlogin(request):
 			return render(request,'index.html',{})
 		else:
 			return redirect('/error/')
+def addvendor(request):
+	return render(request,'addvendor.html',{})
+def addproduct(request):
+	return render(request,'addproduct.html',{})
+def addproductcategory(request):
+	return render(request,'addproductcategory.html',{})

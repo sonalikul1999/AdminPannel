@@ -35,4 +35,7 @@ urlpatterns = [
     path('todolist/',todolist),
     path('adminlogin/',adminlogin),
     path('error/',error),
+    path('addvendor/',addvendor),
+    path('addproduct/',addproduct),
+    path('addproductcategory/',addproductcategory),
 ]
