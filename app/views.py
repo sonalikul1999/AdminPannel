@@ -31,3 +31,9 @@ def responsivetable(request):
 	return render(request,'responsive_table.html',{})
 def todolist(request):
 	return render(request,'todo_list.html',{})
+def addvendor(request):
+	return render(request,'addvendor.html',{})
+def addproduct(request):
+	return render(request,'addproduct.html',{})
+def addproductcategory(request):
+	return render(request,'addproductcategory.html',{})

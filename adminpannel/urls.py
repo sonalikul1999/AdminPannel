@@ -34,4 +34,7 @@ urlpatterns = [
     path('panels/',panels),
     path('responsivetable/',responsivetable),
     path('todolist/',todolist),
+    path('addvendor/',addvendor),
+    path('addproduct/',addproduct),
+    path('addproductcategory/',addproductcategory),
 ]
