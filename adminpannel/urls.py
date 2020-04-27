@@ -27,11 +27,12 @@ urlpatterns = [
     path('formcomponent/',formcomponent),
     path('gallery/',gallery),
     path('general/',general),
-    path('index/',index),
     path('lockscreen/',lockscreen),
     path('login/',login),
     path('morris/',morris),
     path('panels/',panels),
     path('responsivetable/',responsivetable),
     path('todolist/',todolist),
+    path('adminlogin/',adminlogin),
+    path('error/',error),
 ]

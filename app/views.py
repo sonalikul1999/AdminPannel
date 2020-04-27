@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import *
 
-# Create your views here.
 def basictable(request):
 	return render(request,'basic_table.html',{})
 def blank(request):
@@ -17,8 +17,6 @@ def gallery(request):
     return render(request,'gallery.html',{})
 def general(request):
    	return render(request,'general.html',{})
-def index(request):
-	return render(request,'index.html',{})
 def lockscreen(request):
 	return render(request,'lock_screen.html',{})
 def login(request):
@@ -31,3 +29,14 @@ def responsivetable(request):
 	return render(request,'responsive_table.html',{})
 def todolist(request):
 	return render(request,'todo_list.html',{})
+def error(request):
+	return render(request,'error.html',{})
+@csrf_exempt
+def adminlogin(request):
+	if request.method=='POST':
+		e=request.POST.get('email')
+		p=request.POST.get('pass')
+		if e=='admin@gazzapp.com' and p=='1234':
+			return render(request,'index.html',{})
+		else:
+			return redirect('/error/')
