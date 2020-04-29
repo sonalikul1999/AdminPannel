@@ -1,6 +1,17 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import *
+from rest_framework import generics, filters
+from app.models import *
+from app.serializer import *
 
+#API VIEWS START
+class UserAPIView(generics.ListCreateAPIView):
+	search_fields = ['User_Email','User_Password']
+	filter_backends = (filters.SearchFilter, )
+	queryset = UserData.objects.all()
+	serializer_class = UserSerializer
+
+#API VIEWS END
 def basictable(request):
 	return render(request,'basic_table.html',{})
 def blank(request):
