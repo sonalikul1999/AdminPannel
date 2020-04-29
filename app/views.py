@@ -57,3 +57,15 @@ def displayvendor(request):
 			return render(request,'displayvendor.html',{})
 	except:
 		return redirect('/error/')
+def addvendorimages(request):
+	return render(request,'addvendorimages.html',{})
+def deletevendor(request):
+	return render(request,'deletevendor.html',{})
+def addvendorproduct(request):
+	return render(request,'addvendorproduct.html',{})
+def deleteproduct(request):
+	return render(request,'deleteproduct.html',{})
+def addproductimages(request):
+	return render(request,'addproductimages.html',{})
+def addvendorcategory(request):
+	return render(request,'addvendorcategory.html',{})

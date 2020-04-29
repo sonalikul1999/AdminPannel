@@ -39,4 +39,10 @@ urlpatterns = [
     path('addproduct/',addproduct),
     path('addproductcategory/',addproductcategory),
     path('displayvendor/',displayvendor),
+    path('addvendorimages/',addvendorimages),
+    path('deletevendor/',deletevendor),
+    path('addvendorproduct/',addvendorproduct),
+    path('deleteproduct/',deleteproduct),
+    path('addproductimages/',addproductimages),
+    path('addvendorcategory/',addvendorcategory),
 ]
