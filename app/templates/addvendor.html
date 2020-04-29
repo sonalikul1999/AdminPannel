@@ -140,16 +140,28 @@
               <h2>Add Vendor</h2>
             </div>
 
-            <form style="margin-right:50px;margin-left:50px;"class="w3-container">
+            <form style="margin-right:50px;margin-left:50px;"class="w3-container" action="/savevendor/" method="POST">
               
-              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Shop Name" type="text">
+              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Shop Name" name="shopname" type="text">
 
-              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Owner Name" type="text">
-              <textarea style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Address" type="text"></textarea>
-              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="City" type="text">
-              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="State" type="text">
-              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Phone Number" type="number">
-              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Email" type="text">
+              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Owner Name" name="ownername" type="text">
+
+              <select style="margin-bottom:20px;"class="w3-input w3-border w3-white" name="category">
+                <option selected required>Select Vendor Category</option>
+                {% for x in data %}
+                <option selected required>{{ x.VendorCategory_Name|safe }}</option>
+                {% endfor %}
+              </select>
+
+              <textarea style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Address" name="address" type="text"></textarea>
+
+              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="City" name="city" type="text">
+
+              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="State" name="state" type="text">
+
+              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Phone Number" name="phone" type="number">
+
+              <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder="Email" name="email" type="text">
 
               <button style="margin-bottom:20px;font-size:20px;border-radius:15px;"class="w3-btn w3-hover-black w3-yellow" type="submit">Save Vendor</button>
             </form>

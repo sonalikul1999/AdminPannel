@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>GAZZ APP - Admin Pannel</title>
+    <title>DASHGUM - FREE Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
@@ -16,8 +16,7 @@
     <link href="{% static 'assets/font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/zabuto_calendar.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/js/gritter/css/jquery.gritter.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/lineicons/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/lineicons/style.css' %}">    
     
     <!-- Custom styles for this template -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
@@ -25,7 +24,12 @@
      <link href="{% static 'w3.css' %}" rel="stylesheet">
 
     <script src="{% static 'assets/js/chart-master/Chart.js' %}"></script>
-
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
@@ -53,14 +57,7 @@
                                 <p class="green">Pannel List</p>
                             </li>
                             <li>
-                                <a href="/home/">
-                                    <div class="task-info">
-                                        <div class="desc">Home</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/displayvendor/">
+                                <a href="/vendorpannel/">
                                     <div class="task-info">
                                         <div class="desc">Vendor Pannel</div>
                                     </div>
@@ -81,8 +78,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="w3-button w3-black w3-hover-yellow" style="margin:20px; " href="login.html">Home</a></li>
-                    <li><a class="w3-button w3-black w3-hover-yellow" style="margin:20px; " href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -93,83 +89,100 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
                   <p class="centered"><a href="profile.html"><img src="{% static 'assets/img/ui-sam.jpg' %}" class="img-circle" width="60"></a></p>
-                  <h5 class="centered">Hi! Admin</h5>
+                  <h5 class="centered">Marcel Newman</h5>
+                    
                   <li class="mt">
-                      <a href="/displayvendors/">
-                          <i class="fa fa-television"></i>
-                          <span>Display Vendors</span>
+                      <a href="index.html">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
                       </a>
                   </li>
+
                   <li class="sub-menu">
-                      <a href="/addvendor/">
-                          <i class="fa fa-plus-circle"></i>
-                          <span>Add Vendor</span>
+                      <a class="active" href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>UI Elements</span>
                       </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="general.html">General</a></li>
+                          <li><a  href="buttons.html">Buttons</a></li>
+                          <li><a  href="panels.html">Panels</a></li>
+                      </ul>
                   </li>
+
                   <li class="sub-menu">
-                      <a href="/addvendorimages/">
-                          <i class="fa fa-picture-o"></i>
-                          <span>Add Image to Vendor</span>
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Components</span>
                       </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="/deletevendor/">
-                          <i class="fa fa-trash"></i>
-                          <span>Delete Vendor</span>
-                      </a>
+                      <ul class="sub">
+                          <li><a  href="calendar.html">Calendar</a></li>
+                          <li><a  href="gallery.html">Gallery</a></li>
+                          <li><a  href="todo_list.html">Todo List</a></li>
+                      </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-product-hunt"></i>
-                          <span>Vendor Products</span>
+                          <i class="fa fa-book"></i>
+                          <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="/addproduct/">Add Product</a></li>
-                          <li><a  href="/addproductimages/">Add Product Image</a></li>
-                          <li><a  href="/deleteproduct/">Delete Product</a></li>
+                          <li><a  href="blank.html">Blank Page</a></li>
+                          <li><a  href="login.html">Login</a></li>
+                          <li><a  href="lock_screen.html">Lock Screen</a></li>
                       </ul>
                   </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-tasks"></i>
+                          <span>Forms</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="form_component.html">Form Components</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-th"></i>
+                          <span>Data Tables</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="basic_table.html">Basic Table</a></li>
+                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class=" fa fa-bar-chart-o"></i>
+                          <span>Charts</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="morris.html">Morris</a></li>
+                          <li><a  href="chartjs.html">Chartjs</a></li>
+                      </ul>
+                  </li>
+
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
       
       <section id="main-content">
-          <section class="wrapper site-min-height">
-            <h3 style="margin-top:30px;"><i class="fa fa-angle-right"></i> Display Vendors</h3>
-            <div class="row mt">
-            <div class="col-lg-12">
-              <div style="overflow-x:auto;overflow-y:auto;width:auto;height:400px;">
-                <table class="w3-table-all w3-hoverable">
-                <tr class="w3-black">
-                  <th>Vendor Registration Date</th>
-                  <th>Vendor Name</th>
-                  <th>Vendor Category</th>
-                  <th>Vendor Owner</th>
-                  <th>Vendor Address</th>
-                  <th>Vendor City</th>
-                  <th>Vendor State</th>
-                  <th>Vendor Phone</th>
-                  <th>Vendor Email</th>
-                </tr>
-                {% for x in data %}
-                <tr>
-                  <td>{{ x.Vendor_Reg_Date|safe }}</td>
-                  <td>{{ x.Vendor_Name|safe }}</td>
-                  <td>{{ x.Vendor_Category|safe }}</td>
-                  <td>{{ x.Vendor_Owner|safe }}</td>
-                  <td>{{ x.Vendor_Address|safe }}</td>
-                  <td>{{ x.Vendor_City|safe }}</td>
-                  <td>{{ x.Vendor_State|safe }}</td>
-                  <td>{{ x.Vendor_Phone|safe }}</td>
-                  <td>{{ x.Vendor_Email|safe }}</td>
-                </tr>
-                {% endfor %}
-                
-              </table>
-              </div>
+          <section class="wrapper">
+            <div style="margin:50px;"class="w3-container w3-black">
+              <h2>Add Vendor category</h2>
             </div>
-            </div>
+
+            <form style="margin-right:50px;margin-left:50px;"class="w3-container" action="/savevendorcategory/" method="POST" enctype="multipart/form-data">
+              
+              <input style="margin-bottom:20px;" class="w3-input w3-border w3-light-grey" placeholder="Category Name" name="name" type="text" required>
+              
+              <input style="margin-bottom:20px;" class="w3-input w3-border w3-light-grey" name="image" type="file">
+
+              
+
+              <button style="margin-bottom:20px;font-size:20px;border-radius:15px;"class="w3-btn w3-hover-black w3-yellow" type="submit">Add</button>
+            </form>
               
           </section>
       </section>
@@ -197,7 +210,26 @@
     <script src="{% static 'assets/js/sparkline-chart.js' %}"></script>    
 	<script src="{% static 'assets/js/zabuto_calendar.js' %}"></script>	
 	
-	
+	<script type="text/javascript">
+        $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'Welcome to Dashgum!',
+            // (string | mandatory) the text inside the notification
+            text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
+            // (string | optional) the image to display on the left
+            image: 'assets/img/ui-sam.jpg',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: true,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: '',
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class'
+        });
+
+        return false;
+        });
+	</script>
 	
 	<script type="application/javascript">
         $(document).ready(function () {

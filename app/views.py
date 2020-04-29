@@ -11,6 +11,12 @@ class UserAPIView(generics.ListCreateAPIView):
 	queryset = UserData.objects.all()
 	serializer_class = UserSerializer
 
+class VendorAPIView(generics.ListCreateAPIView):
+	search_fields = ['Vendor_Name']
+	filter_backends = (filters.SearchFilter, )
+	queryset = VendorsData.objects.all()
+	serializer_class = VendorSerializer
+
 #API VIEWS END
 def basictable(request):
 	return render(request,'basic_table.html',{})
@@ -55,7 +61,29 @@ def adminlogin(request):
 def addvendor(request):
 	try:
 		if request.session['admin_id'] == 'admin@gazzapp.com':
-			return render(request,'addvendor.html',{})
+			return render(request,'addvendor.html',{'data':VendorsCategoryData.objects.all()})
+	except:
+		return redirect('/error/')
+def addvendorcategory(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'addvendorcategory.html',{})
+	except:
+		return redirect('/error/')
+
+@csrf_exempt
+def savevendorcategory(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			if request.method=="POST":
+				n=request.POST.get('name')
+				i=request.FILES['image']
+				obj=VendorsCategoryData(
+					VendorCategory_Name=n,
+					VendorCategory_Image=i,
+					)
+				obj.save()
+				return render(request,'addvendorcategory.html',{'msg':'Category Saved'})
 	except:
 		return redirect('/error/')
 def addproduct(request):
@@ -65,6 +93,38 @@ def addproductcategory(request):
 def displayvendor(request):
 	try:
 		if request.session['admin_id'] == 'admin@gazzapp.com':
-			return render(request,'displayvendor.html',{})
+			return render(request,'displayvendor.html',{'data':VendorsData.objects.all()})
+	except:
+		return redirect('/error/')
+
+@csrf_exempt
+def savevendor(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			if request.method=="POST":
+				sname=request.POST.get('shopname')
+				oname=request.POST.get('ownername')
+				address=request.POST.get('address')
+				city=request.POST.get('city')
+				state=request.POST.get('state')
+				phone=request.POST.get('phone')
+				email=request.POST.get('email')
+				category=request.POST.get('category')
+				obj=VendorsData(
+					Vendor_Name=sname,
+					Vendor_Category=category,
+					Vendor_Owner=oname,
+					Vendor_Address=address,
+					Vendor_City=city,
+					Vendor_State=state,
+					Vendor_Phone=phone,
+					Vendor_Email=email
+					)
+				obj.save()
+				dic={'data':VendorsCategoryData.objects.all(),
+					'msg':'Vendor Saved Successfully'}
+				return render(request,'addvendor.html',dic)
+			else:
+				return redirect('/error/')
 	except:
 		return redirect('/error/')

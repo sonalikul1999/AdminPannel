@@ -4,15 +4,14 @@ from django.conf import settings
 TIME_FORMAT = '%d.%m.%Y'
 
 class VendorsCategoryData(models.Model):
-	VendorCategory_ID=models.CharField(max_length=50)
-	VendorCategory_Name=models.CharField(max_length=100)
+	VendorCategory_Name=models.CharField(max_length=100, primary_key=True)
 	VendorCategory_Image=models.ImageField(upload_to="vendorcategoryimages/")
 	class Meta:
 		db_table="VendorsCategoryData"
 
 class VendorsData(models.Model):
 	Vendor_Reg_Date=models.DateField(("Date"), default=date.today)
-	Vendor_Name=models.CharField(max_length=100)
+	Vendor_Name=models.CharField(max_length=100, primary_key=True)
 	Vendor_Category=models.CharField(max_length=100)
 	Vendor_Owner=models.CharField(max_length=100)
 	Vendor_Address=models.CharField(max_length=1000)

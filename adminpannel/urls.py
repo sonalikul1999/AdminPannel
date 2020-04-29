@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/',UserAPIView.as_view()),
+    path('api/vendor/',VendorAPIView.as_view()),
     path('basictable/',basictable),
     path('blank/',blank),
     path('buttons/',buttons),
@@ -40,4 +43,12 @@ urlpatterns = [
     path('addproduct/',addproduct),
     path('addproductcategory/',addproductcategory),
     path('displayvendor/',displayvendor),
-]
+    path('addvendorcategory/',addvendorcategory),
+    path('savevendorcategory/',savevendorcategory),
+    path('savevendor/',savevendor),
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
+
