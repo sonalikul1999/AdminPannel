@@ -38,4 +38,5 @@ urlpatterns = [
     path('addvendor/',addvendor),
     path('addproduct/',addproduct),
     path('addproductcategory/',addproductcategory),
+    path('displayvendor/',displayvendor),
 ]

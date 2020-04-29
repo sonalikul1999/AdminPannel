@@ -36,13 +36,24 @@ def adminlogin(request):
 	if request.method=='POST':
 		e=request.POST.get('email')
 		p=request.POST.get('pass')
+		request.session['admin_id'] = e
 		if e=='admin@gazzapp.com' and p=='1234':
 			return render(request,'index.html',{})
 		else:
 			return redirect('/error/')
 def addvendor(request):
-	return render(request,'addvendor.html',{})
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'addvendor.html',{})
+	except:
+		return redirect('/error/')
 def addproduct(request):
 	return render(request,'addproduct.html',{})
 def addproductcategory(request):
 	return render(request,'addproductcategory.html',{})
+def displayvendor(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'displayvendor.html',{})
+	except:
+		return redirect('/error/')
