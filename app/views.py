@@ -128,3 +128,39 @@ def savevendor(request):
 				return redirect('/error/')
 	except:
 		return redirect('/error/')
+def addvendorimages(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'addvendorimages.html',{'data':VendorsData.objects.all()})
+	except:
+		return redirect('/error/')
+def deletevendor(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'deletevendor.html',{})
+	except:
+		return redirect('/error/')
+def addvendorproduct(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'addvendorproduct.html',{})
+	except:
+		return redirect('/error/')
+def deleteproduct(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'deleteproduct.html',{})
+	except:
+		return redirect('/error/')
+def addproductimages(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'addproductimages.html',{})
+	except:
+		return redirect('/error/')
+def addvendorcategory(request):
+	try:
+		if request.session['admin_id'] == 'admin@gazzapp.com':
+			return render(request,'addvendorcategory.html',{})
+	except:
+		return redirect('/error/')

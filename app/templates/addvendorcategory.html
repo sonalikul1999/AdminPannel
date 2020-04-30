@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+    <title>GAZZ APP - Admin Pannel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
@@ -22,6 +22,10 @@
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/style-responsive.css' %}" rel="stylesheet">
      <link href="{% static 'w3.css' %}" rel="stylesheet">
+<<<<<<< HEAD
+=======
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+>>>>>>> 38f56afe8b5f27b1f49bf9f5a2e548b0fa202b2e
 
     <script src="{% static 'assets/js/chart-master/Chart.js' %}"></script>
     
@@ -89,6 +93,7 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
                   <p class="centered"><a href="profile.html"><img src="{% static 'assets/img/ui-sam.jpg' %}" class="img-circle" width="60"></a></p>
+<<<<<<< HEAD
                   <h5 class="centered">Marcel Newman</h5>
                     
                   <li class="mt">
@@ -183,6 +188,63 @@
 
               <button style="margin-bottom:20px;font-size:20px;border-radius:15px;"class="w3-btn w3-hover-black w3-yellow" type="submit">Add</button>
             </form>
+=======
+                  <h5 class="centered">Hi! Admin</h5>
+                  <li class="mt">
+                      <a href="/displayvendor/">
+                          <i class="fa fa-television"></i>
+                          <span>Display Vendors</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="/addvendor/">
+                          <i class="fa fa-plus-circle"></i>
+                          <span>Add Vendor</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="/addvendorimages/">
+                          <i class="fa fa-picture-o"></i>
+                          <span>Add Image to Vendor</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="/deletevendor/">
+                          <i class="fa fa-trash"></i>
+                          <span>Delete Vendor</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-product-hunt"></i>
+                          <span>Vendor Products</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="/addproduct/">Add Product</a></li>
+                          <li><a  href="/addproductimages/">Add Product Image</a></li>
+                          <li><a  href="/deleteproduct/">Delete Product</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>      
+      <section id="main-content">
+          <section class="wrapper">
+            <div style="margin:50px;"class="w3-container w3-black">
+  <h2>Add Vendor category</h2>
+</div>
+
+<form style="margin-right:50px;margin-left:50px;"class="w3-container">
+  
+  <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder=" Category Name" type="text">
+    <input style="margin-bottom:20px;"class="w3-input w3-border w3-white" placeholder=" Category Image" type="file">
+
+  
+
+  <button style="margin-bottom:20px;font-size:20px;border-radius:15px;"class="w3-btn w3-hover-black w3-yellow">Add</button>
+</form>
+>>>>>>> 38f56afe8b5f27b1f49bf9f5a2e548b0fa202b2e
               
           </section>
       </section>
